@@ -16,6 +16,7 @@
       $row = mysqli_fetch_assoc($res);
       $_SESSION['SUCCESS'] = 'yes';
       $_SESSION['USER'] = $row['username'];
+      $_SESSION['PASSWORD'] = $row['password'];
       redirect('index.php');
     }
     else{
@@ -27,6 +28,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -41,24 +43,27 @@
   <!-- End plugin css for this page -->
   <!-- inject css -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>     
-    .error_msg{
-      color: red;
-      margin-top: 10px;
-      padding: 5px;
-    }
-    .logo-name{
-      color:purple;
-      padding:15px;
-      font-family:'Jost', sans-serif; 
-      font-size:35px;
-    }
-    .login-text{
-      margin-top:26px;
-      padding:0px;
-     }
+  <style>
+  .error_msg {
+    color: red;
+    margin-top: 10px;
+    padding: 5px;
+  }
+
+  .logo-name {
+    color: purple;
+    padding: 15px;
+    font-family: 'Jost', sans-serif;
+    font-size: 35px;
+  }
+
+  .login-text {
+    margin-top: 26px;
+    padding: 0px;
+  }
   </style>
 </head>
+
 <body class="sidebar-light">
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -68,20 +73,23 @@
             <div class="auth-form-light text-left p-5">
               <h6 class="font-weight-bold logo-name text-center">Railway Reservation</h6>
               <div class="text-center">
-	<img src="assets/images/logo1.png" alt="logo">
+                <img src="assets/images/logo1.png" alt="logo">
               </div>
               <h6 class="font-weight-light login-text">Log in to continue.</h6>
               <!-- Form Starts -->
               <form class="pt-3" method="post">
                 <div class="form-group">
-                  <input type="text" name="user" autocomplete="off"class="form-control form-control-lg" id="user_username" placeholder="Username" required>
+                  <input type="text" name="user" autocomplete="off" class="form-control form-control-lg"
+                    id="user_username" placeholder="Username" required>
                 </div>
                 <div class="form-group">
-                  <input type="password" autocomplete="off" class="form-control form-control-lg" id="user_password" placeholder="Password" name="pass" required>
+                  <input type="password" autocomplete="off" class="form-control form-control-lg" id="user_password"
+                    placeholder="Password" name="pass" required>
                 </div>
                 <div class="mt-3">
-                  <input type="submit" name="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="#" value="LOG IN">
-                </div>                
+                  <input type="submit" name="submit"
+                    class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="#" value="LOG IN">
+                </div>
               </form>
               <div class="error_msg">
                 <?php
@@ -116,4 +124,5 @@
   <script src="assets/js/dashboard.js"></script>
   <!-- End custom js for this page-->
 </body>
+
 </html>
