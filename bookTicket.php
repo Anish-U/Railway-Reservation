@@ -75,7 +75,7 @@
         <div class="row">
           <div class="col-12">
             <div class="table-responsive">
-              <table id="order-listing" class="table">
+              <table class="table">
                 <thead>
                   <tr>
                     <th>Train No</th>
@@ -113,7 +113,7 @@
                     <td><?php echo $End; ?></td>
                     <td><?php echo $Halts; ?></td>
                     <td>
-                      <a href="" class="badge badge-danger"> BOOK NOW</a>
+                      <a href="bookings.php?id=<?php echo $TrainNo ?>" class="badge badge-danger">BOOK NOW</a>
                     </td>
                   </tr><?php
                     }
