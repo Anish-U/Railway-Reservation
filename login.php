@@ -16,6 +16,7 @@
       $row = mysqli_fetch_assoc($res);
       $_SESSION['SUCCESS'] = 'yes';
       $_SESSION['USER'] = $row['username'];
+      $_SESSION['user_id'] = $row['user_id'];
       $_SESSION['PASSWORD'] = $row['password'];
       redirect('index.php');
     }
