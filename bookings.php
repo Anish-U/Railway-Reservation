@@ -35,8 +35,8 @@
                     if( $row > 0 ){
                       while( $data = mysqli_fetch_assoc($result)){
                         
-                        ?><option value="<?php echo $data['depDate'] ?>">
-                    <?php echo $data['depDate']; ?></option><?php
+                        ?><option value="<?php echo $data['depDate']; ?>">
+                    <?php echo date('d F Y',strtotime($data['depDate'])); ?></option><?php
                       }
                     }
                   ?>
