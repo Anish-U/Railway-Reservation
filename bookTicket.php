@@ -43,11 +43,16 @@
               <div class="form-group">
                 <select class="form-control" name="startStation" id="exampleFormControlSelect1">
                   <option value="">Select Station</option>
-                  <option value="S0001">Station1</option>
-                  <option value="S0002">Station2</option>
-                  <option value="S0003">Station3</option>
-                  <option value="S0004">Station4</option>
-                  <option value="S0005">Station5</option>
+                  <?php
+                    $query=" SELECT station_id, sname FROM station ORDER BY sname ASC ";
+                    $res = mysqli_query($con,$query);
+                    $rows = mysqli_num_rows($res);
+                    if( $rows > 0 ){
+                      while( $info = mysqli_fetch_assoc($res)){
+                        ?><option value="<?php echo $info['station_id']; ?>"><?php echo $info['sname']; ?></option><?php
+                      }
+                    }
+                  ?>                  
                 </select>
               </div>
             </div>
@@ -56,14 +61,18 @@
               <div class="form-group">
                 <select class="form-control" name="endStation" id="exampleFormControlSelect1">
                   <option value="">Select Station</option>
-                  <option value="S0001">Station1</option>
-                  <option value="S0002">Station2</option>
-                  <option value="S0003">Station3</option>
-                  <option value="S0004">Station4</option>
-                  <option value="S0005">Station5</option>
-                </select>
+                  <?php
+                    $query=" SELECT station_id, sname FROM station ORDER BY sname ASC ";
+                    $res = mysqli_query($con,$query);
+                    $rows = mysqli_num_rows($res);
+                    if( $rows > 0 ){
+                      while( $info = mysqli_fetch_assoc($res)){
+                        ?><option value="<?php echo $info['station_id']; ?>"><?php echo $info['sname']; ?></option><?php
+                      }
+                    }
+                  ?>                  
+                  </select>
               </div>
-
             </div>
           </div>
           <div class="row d-flex justify-content-center align-items-center">

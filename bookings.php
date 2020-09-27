@@ -114,7 +114,7 @@
     jQuery('#box'+id).remove();
   }
 </script>
- <!-- <div class="row">
+ <div class="row">
   <div class="col-12 grid-margin stretch-card" style="background-color: lightgreen!important;">
     <div class="card">
       <div class="card-body">
@@ -164,7 +164,7 @@
       </div>
     </div>
   </div>
-</div>  -->
+</div> 
 <?php
 
 if(isset($_GET['submit'])){
