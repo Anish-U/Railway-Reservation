@@ -28,6 +28,10 @@
   <div class="col-12 grid-margin stretch-card" style="background-color: #ffa0d2!important;">
     <div class="card">
       <div class="card-body">
+        <div class="row text-center">
+          <div class="offset-4 col-4"><h2>Your Tickets !!</h2></div>
+        </div>
+        <br>
         <div class="row">
           <div class="col-12">
             <div class="table-responsive">
@@ -60,14 +64,6 @@
                                 $dep_time = $data['dep_time'];
                                 $status = $data['status'];
                             
-                                
-                                    $query="SELECT passenger_details.name 
-                                            FROM passenger_ticket, passenger_details 
-                                            WHERE passenger_ticket.passenger_id = passenger_details.passenger_id 
-                                            AND passenger_ticket.ticket_id = '$ticket_id' ";
-
-                                    $res = mysqli_query($con,$query);
-                                    $rows = mysqli_num_rows($result);
                                     ?>
                     <tr>
                         <td><?php echo $ticket_id; ?></td>

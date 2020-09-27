@@ -29,6 +29,9 @@
     <div class="card">
       <div class="card-body">
         <form class="forms-sample">
+          <div class="row text-center">
+            <div class="offset-4 col-4"><h2>Book Tickets !!</h2></div>
+          </div><br><br>
           <div class="row">
             <div class="col-6">
               <label for="exampleFormControlSelect1">From</label>
@@ -120,7 +123,7 @@
                   }else{
                       ?>
                   <tr>
-                    <td colspan="5" class="text-center"><strong>No Trains Found</strong></td>
+                    <td colspan="6" class="text-center"><strong>No Trains Found</strong></td>
                   </tr><?php
                   }
                     ?>
