@@ -23,9 +23,14 @@
     $row = mysqli_num_rows($result);
 
 ?>
-
+<div class="alert alert-danger " role="alert">
+  <strong>Hello <?php echo $_SESSION['USER']?>!</strong> Once cancelled the tickets, it's done.❌
+  <button type="button" class="close" data-dismiss="alert">
+    <span>&times;</span>
+  </button>
+</div>
 <div class="row">
-  <div class="col-12 grid-margin stretch-card" style="background-color: #ffa0d2!important;">
+  <div class="col-12 grid-margin stretch-card" style="background-color: #ffcc5c!important;">
     <div class="card">
       <div class="card-body">
         <div class="row">

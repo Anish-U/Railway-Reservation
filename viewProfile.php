@@ -14,6 +14,14 @@
     $rows = mysqli_num_rows($res);
     
 ?>
+
+<div class="alert alert-info" role="alert">
+  <strong>Hello <?php echo $_SESSION['USER']?>!</strong> You have a great Profile 😃.
+  <button type="button" class="close" data-dismiss="alert">
+    <span>&times;</span>
+  </button>
+</div>
+
 <div class="row">
   <div class="col-12 grid-margin stretch-card" style="background-color: lightblue!important;">
     <div class="card">

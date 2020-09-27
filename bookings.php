@@ -210,6 +210,7 @@ if(isset($_GET['submit'])){
 
   // echo $sql = "INSERT INTO ticket_details(ticket_id,train_no,coach_type,user_id,status) VALUES('$ticket_id','$train_no','$coach','$user_id','1') ";
   mysqli_query($con," INSERT INTO ticket_details(ticket_id,train_no,dept_date,coach_type,user_id,status) VALUES('$ticket_id','$train_no','$date_choice','$coach','$user_id','1') ");
+  ?><script>alert('TICKET BOOKED SUCCESSFULLY');</script><?php
 
   redirect('index.php');
 }

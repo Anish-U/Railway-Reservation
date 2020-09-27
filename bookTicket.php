@@ -24,14 +24,19 @@
             }
         }
 ?>
+
+<div class="alert alert-success " role="alert">
+  <strong>Hello <?php echo $_SESSION['USER']?>!</strong> Happy Booking.🎉
+  <button type="button" class="close" data-dismiss="alert">
+    <span>&times;</span>
+  </button>
+</div>
+
 <div class="row">
   <div class="col-12 grid-margin stretch-card" style="background-color: lightgreen!important;">
     <div class="card">
       <div class="card-body">
         <form class="forms-sample">
-          <div class="row text-center">
-            <div class="offset-4 col-4"><h2>Book Tickets !!</h2></div>
-          </div><br><br>
           <div class="row">
             <div class="col-6">
               <label for="exampleFormControlSelect1">From</label>

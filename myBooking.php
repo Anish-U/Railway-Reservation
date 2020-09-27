@@ -24,14 +24,19 @@
 
 ?>
 
+
+<div class="alert alert-primary " role="alert">
+  <strong>Hello <?php echo $_SESSION['USER']?>!</strong> All your bookings are here.🌟
+  <button type="button" class="close" data-dismiss="alert">
+    <span>&times;</span>
+  </button>
+</div>
+
+
 <div class="row">
   <div class="col-12 grid-margin stretch-card" style="background-color: #ffa0d2!important;">
     <div class="card">
       <div class="card-body">
-        <div class="row text-center">
-          <div class="offset-4 col-4"><h2>Your Tickets !!</h2></div>
-        </div>
-        <br>
         <div class="row">
           <div class="col-12">
             <div class="table-responsive">

@@ -7,8 +7,7 @@
   <div class="row d-flex justify-content-center align-items-center">
     <div class="col-6">
       <div class="d-sm-flex justify-content-center align-items-center justify-content-sm-between">
-        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © Reserved
-          <?php $yr = date('Y');  echo $yr; ?>. Project for the DBMS University Course - 19BCB0016.</span>
+        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">September 2020 -<?php $yr = date('F Y');  echo $yr; ?>. Project for the DBMS University Course - 19BCB0016.</span>
       </div>
     </div>
   </div>

@@ -10,6 +10,7 @@
                   WHERE ticket_id = '$ticket_id' ";
 
         mysqli_query($con,$query);
+        ?><script>alert('TICKET CANCELLED SUCCESSFULLY');</script><?php
         redirect('index.php');
     }
     else{
