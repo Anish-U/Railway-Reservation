@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2020 at 09:32 PM
+-- Generation Time: Oct 05, 2020 at 09:32 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `railway_reservation`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cancel_details`
+--
+
+CREATE TABLE `cancel_details` (
+  `ticket_id` varchar(10) NOT NULL,
+  `cancel_date` varchar(10) NOT NULL,
+  `cancel_time` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cancel_details`
+--
+
+INSERT INTO `cancel_details` (`ticket_id`, `cancel_date`, `cancel_time`) VALUES
+('790', '05 October', '09:22:59');
 
 -- --------------------------------------------------------
 
@@ -57,6 +76,14 @@ CREATE TABLE `passenger_details` (
   `seat_no` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `passenger_details`
+--
+
+INSERT INTO `passenger_details` (`passenger_id`, `name`, `age`, `gender`, `seat_no`) VALUES
+('26249', 'Anish', '19', 'male', 16),
+('97484', 'Anish', '19', 'male', 70);
+
 -- --------------------------------------------------------
 
 --
@@ -67,6 +94,14 @@ CREATE TABLE `passenger_ticket` (
   `passenger_id` varchar(10) NOT NULL,
   `ticket_id` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `passenger_ticket`
+--
+
+INSERT INTO `passenger_ticket` (`passenger_id`, `ticket_id`) VALUES
+('26249', '790'),
+('97484', '527');
 
 -- --------------------------------------------------------
 
@@ -110,6 +145,14 @@ CREATE TABLE `ticket_amount` (
   `total_amount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `ticket_amount`
+--
+
+INSERT INTO `ticket_amount` (`ticket_id`, `total_amount`) VALUES
+(790, 2050),
+(527, 1300);
+
 -- --------------------------------------------------------
 
 --
@@ -125,6 +168,14 @@ CREATE TABLE `ticket_details` (
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `ticket_details`
+--
+
+INSERT INTO `ticket_details` (`ticket_id`, `train_no`, `dept_date`, `coach_type`, `user_id`, `status`) VALUES
+(790, 'TR016', '2020-11-02', 'SPL', 'U0004', 0),
+(527, 'TR006', '2020-11-06', 'AC', 'U0004', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -135,6 +186,14 @@ CREATE TABLE `ticket_passenger` (
   `ticket_id` int(11) NOT NULL,
   `no_of_passenger` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ticket_passenger`
+--
+
+INSERT INTO `ticket_passenger` (`ticket_id`, `no_of_passenger`) VALUES
+(527, 1),
+(790, 1);
 
 -- --------------------------------------------------------
 

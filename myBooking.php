@@ -40,7 +40,7 @@
         <div class="row">
           <div class="col-12">
             <div class="table-responsive">
-              <table class="table">
+              <table class="table text-center">
                 <thead>
                   <tr>
                     <th>Ticket ID</th>
@@ -48,10 +48,11 @@
                     <th>From </th>
                     <th>To </th>
                     <th>Start date</th>
-                    <th>Timings </th>
-                    <th>Passengers</th>
+                    <!-- <th>Timings </th> -->
+                    <!-- <th>Passengers</th> -->
                     <th>Amount</th>
                     <th>Status</th>
+                    <th>Cancelled On</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -68,21 +69,39 @@
                                 $arr_time = $data['arr_time'];
                                 $dep_time = $data['dep_time'];
                                 $status = $data['status'];
+
+                                $fromquery = " SELECT sname FROM station WHERE station_id = '$start' ";
+                                $toquery = " SELECT sname FROM station WHERE station_id = '$end' ";
+                                $fromres = mysqli_query($con,$fromquery);
+                                $tores = mysqli_query($con,$toquery);
+                                $fromdata = mysqli_fetch_assoc($fromres);
+                                $todata = mysqli_fetch_assoc($tores);
+                                $start = $fromdata['sname'];
+                                $end = $todata['sname'];
                             
-                                    ?>
+                    ?>
                     <tr>
                         <td><?php echo $ticket_id; ?></td>
                         <td><?php echo $t_name; ?></td>
                         <td><?php echo $start; ?></td>
                         <td><?php echo $end; ?></td>
                         <td><?php echo date("d F Y",strtotime($dept_date)); ?></td>
-                        <td><?php echo "$arr_time - $dep_time"; ?></td>
-                        <td><?php echo $no_of_pass; ?></td>
+                        <!-- <td><?php echo "$arr_time - $dep_time"; ?></td> -->
+                        <!-- <td><?php echo $no_of_pass; ?></td> -->
                         <td><?php echo "Rs.$total"; ?></td>
                         <td><?php if ( $status != 0 ){
                             echo "BOOKED";
                         }else{
                             echo "CANCELLED";
+                        }
+                         ?></td>
+                        <td><?php if ( $status != 0 ){
+                            echo "-";
+                        }else{
+                            $sqlquery = " SELECT cancel_date, cancel_time FROM cancel_details WHERE ticket_id = '$ticket_id' ";
+                            $resultquery = mysqli_query($con,$sqlquery);
+                            $information = mysqli_fetch_assoc($resultquery);
+                            echo $information['cancel_date']." - ".$information['cancel_time'];
                         }
                          ?></td>
                     </tr><?php

@@ -65,6 +65,16 @@
                                 $dep_time = $data['dep_time'];
                                 $status = $data['status'];
                                    
+
+                                $fromquery = " SELECT sname FROM station WHERE station_id = '$start' ";
+                                $toquery = " SELECT sname FROM station WHERE station_id = '$end' ";
+                                $fromres = mysqli_query($con,$fromquery);
+                                $tores = mysqli_query($con,$toquery);
+                                $fromdata = mysqli_fetch_assoc($fromres);
+                                $todata = mysqli_fetch_assoc($tores);
+                                $start = $fromdata['sname'];
+                                $end = $todata['sname'];
+
                             if( $status != 0 ){
 
                                            
