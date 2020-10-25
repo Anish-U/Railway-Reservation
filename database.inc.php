@@ -3,7 +3,7 @@
     $host = "localhost";
     $user = "root";
     $pass = "";
-    $db = "railway_reservation";
+    $db = "dbms";
 
     $con = mysqli_connect($host,$user,$pass,$db);
 
